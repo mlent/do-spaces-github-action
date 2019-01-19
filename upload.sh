@@ -1,13 +1,11 @@
 #!/bin/sh
-set -eu
+set -e
+
+sed -i '' "s/access_key =/access_key = ${ACCESS_KEY}/g" ${HOME}/.s3cfg
+sed -i '' "s/secret_key =/secret_key = ${SECRET_KEY}/g" ${HOME}/.s3cfg
 
 s3cmd sync \
-  --access_key=$ACCESS_KEY \
-  --secret_key=$SECRET_KEY \
-  --config=.s3cfg \
-  --host=ams3.digitaloceanspaces.com \
   --acl-public \
-  --region=ams3 \
   --skip-existing \
   --verbose \
   $GITHUB_WORKSPACE/images s3://notanomadblog/images/
