@@ -10,7 +10,6 @@ LABEL repository="http://github.com/mlent/do-spaces-github-action"
 LABEL homepage="http://github.com/mlent/do-spaces-github-action"
 LABEL maintainer="Monica Lent <lent.monica@gmail.com>"
 
-RUN apt-get update && apt-get install -y git
 RUN git clone https://github.com/s3tools/s3cmd /tmp/s3cmd
 RUN ls
 RUN pwd
