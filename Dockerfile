@@ -14,6 +14,7 @@ RUN git clone https://github.com/s3tools/s3cmd /tmp/s3cmd && \
   cd /tmp/s3cmd && \
   python setup.py install
 
+ADD .s3cfg /.s3cfg
 ADD upload.sh /upload.sh
 
 ENTRYPOINT ["/upload.sh"]
