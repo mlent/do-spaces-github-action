@@ -10,8 +10,6 @@ LABEL repository="http://github.com/mlent/do-spaces-github-action"
 LABEL homepage="http://github.com/mlent/do-spaces-github-action"
 LABEL maintainer="Monica Lent <lent.monica@gmail.com>"
 
-WORKDIR $GITHUB_WORKSPACE
-
 RUN git clone https://github.com/s3tools/s3cmd /tmp/s3cmd && \
   cd /tmp/s3cmd && \
   python setup.py install
