@@ -2,8 +2,8 @@
 set -eu
 
 s3cmd sync \
-  --access-key=$ACCESS_KEY \
-  --secret-key=$SECRET_KEY \
+  --access_key=$ACCESS_KEY \
+  --secret_key=$SECRET_KEY \
   --host=ams3.digitaloceanspaces.com \
   --acl-public \
   --region=ams3 \
