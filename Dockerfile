@@ -10,18 +10,12 @@ LABEL repository="http://github.com/mlent/do-spaces-github-action"
 LABEL homepage="http://github.com/mlent/do-spaces-github-action"
 LABEL maintainer="Monica Lent <lent.monica@gmail.com>"
 
-RUN git clone https://github.com/s3tools/s3cmd /tmp/s3cmd
-RUN ls
-RUN pwd
-RUN cd /tmp/s3cmd
-RUN ls
-RUN pwd
-RUN python setup.py install
-RUN ls
-RUN pwd
-RUN cd $GITHUB_WORKSPACE
-RUN ls
-RUN pwd
+WORKDIR $GITHUB_WORKSPACE
+
+RUN git clone https://github.com/s3tools/s3cmd /tmp/s3cmd && \
+  cd /tmp/s3cmd && \
+  python setup.py install
 
 ADD upload.sh /upload.sh
+
 ENTRYPOINT ["/upload.sh"]
