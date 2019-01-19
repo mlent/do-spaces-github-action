@@ -12,6 +12,8 @@ LABEL maintainer="Monica Lent <lent.monica@gmail.com>"
 
 RUN apt-get update && apt-get install -y git
 RUN git clone https://github.com/s3tools/s3cmd
+RUN cd s3cmd
+RUN ls
 RUN python ./s3cmd/setup.py install
 
 ADD upload.sh /upload.sh
