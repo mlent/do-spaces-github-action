@@ -1,3 +1,6 @@
+#!/bin/sh
+set -eu
+
 s3cmd sync \
   --access-key=$ACCESS_KEY \
   --secret-key=$SECRET_KEY \
